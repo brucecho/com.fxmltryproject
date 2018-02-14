@@ -1,6 +1,6 @@
 package com.fxmltryproject;
 
-import com.fxmltryproject.views.PrimaryView;
+import com.fxmltryproject.views.RotationTestView;
 import com.fxmltryproject.views.SecondaryView;
 import com.gluonhq.charm.glisten.application.MobileApplication;
 import com.gluonhq.charm.glisten.layout.layer.SidePopupView;
@@ -17,7 +17,7 @@ public class FXMLTryProject extends MobileApplication {
     
     @Override
     public void init() {
-        addViewFactory(PRIMARY_VIEW, () -> new PrimaryView(PRIMARY_VIEW).getView());
+        addViewFactory(PRIMARY_VIEW, () -> new RotationTestView(PRIMARY_VIEW).getView());
         addViewFactory(SECONDARY_VIEW, () -> new SecondaryView(SECONDARY_VIEW).getView());
         
         addLayerFactory(MENU_LAYER, () -> new SidePopupView(new DrawerManager().getDrawer()));

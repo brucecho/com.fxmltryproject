@@ -8,21 +8,21 @@ import com.fxmltryproject.FXMLTryProject;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class PrimaryPresenter {
+public class RotationTestPresenter {
 
     @FXML
-    private View primary;
+    private View rotationTest;
 
     @FXML
     private Label label;
 
     public void initialize() {
-        primary.showingProperty().addListener((obs, oldValue, newValue) -> {
+        rotationTest.showingProperty().addListener((obs, oldValue, newValue) -> {
             if (newValue) {
                 AppBar appBar = MobileApplication.getInstance().getAppBar();
                 appBar.setNavIcon(MaterialDesignIcon.MENU.button(e -> 
                         MobileApplication.getInstance().showLayer(FXMLTryProject.MENU_LAYER)));
-                appBar.setTitleText("Primary");
+                appBar.setTitleText("Rotation Test");
                 appBar.getActionItems().add(MaterialDesignIcon.SEARCH.button(e -> 
                         System.out.println("Search")));
             }
