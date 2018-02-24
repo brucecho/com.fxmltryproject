@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+
+<View fx:id="rotationTest" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" stylesheets="@RotateTransitionTest.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fxmltryproject.views.RotateTransitionTestPresenter">
+    <center>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="ImageView1">
+                    <image>
+                        <Image url="@../pictures/Letter-a-icon.png" />
+                    </image>
+                </ImageView>
+                <VBox alignment="CENTER">
+                    <children>
+                        <HBox>
+                            <children>
+                                <Label text="Axis" />
+                                <TextField fx:id="tfAxis"></TextField>
+                            </children>
+                        </HBox>
+                        <Button mnemonicParsing="false" onAction="#button1Click" text="開始">
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+</View>
