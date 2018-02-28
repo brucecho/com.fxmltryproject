@@ -9,6 +9,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
 
 <View fx:id="rotationTest" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" stylesheets="@RotateTransitionTest.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fxmltryproject.views.RotateTransitionTestPresenter">
     <center>
@@ -19,12 +21,39 @@
                         <Image url="@../pictures/Letter-a-icon.png" />
                     </image>
                 </ImageView>
-                <VBox alignment="CENTER">
+                <VBox alignment="CENTER" spacing="10">
+                    <padding>
+                        <Insets top="10" left="10" bottom="10" right="10"></Insets>
+                    </padding>
                     <children>
-                        <HBox>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Label text="Angle" />
+                                <TextField fx:id="tfAngle"></TextField>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Label text="CycleCount" />
+                                <TextField fx:id="tfCycleCount"></TextField>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Label text="AutoReverse" />
+                                <ChoiceBox fx:id="cbAutoReverse"></ChoiceBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Label text="Duration" />
+                                <TextField fx:id="tfDuration"></TextField>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
                             <children>
                                 <Label text="Axis" />
-                                <TextField fx:id="tfAxis"></TextField>
+                                <ChoiceBox fx:id="cbAxis"></ChoiceBox>
                             </children>
                         </HBox>
                         <Button mnemonicParsing="false" onAction="#button1Click" text="開始">
