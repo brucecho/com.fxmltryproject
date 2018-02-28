@@ -18,32 +18,32 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
-public class RotateTransitionTestPresenter {
+public class RotateTransitionTestPresenter extends PresenterFather {
 
     @FXML
     private View rotationTest;
 
     @FXML
     private ImageView ImageView1;
-    
+
     @FXML
     private TextField tfAngle;
-    
+
     @FXML
     private TextField tfCycleCount;
-    
+
     @FXML
     private ChoiceBox cbAutoReverse;
-    
+
     @FXML
     private TextField tfDuration;
-    
+
     @FXML
     private ChoiceBox cbAxis;
-    
+
     private ObservableList<String> olAutoReverse = FXCollections.observableArrayList();
     private ObservableList<String> olAxis = FXCollections.observableArrayList();
-    
+
     public void initialize() {
         rotationTest.showingProperty().addListener((obs, oldValue, newValue) -> {
             if (newValue) {
@@ -58,7 +58,7 @@ public class RotateTransitionTestPresenter {
         olAutoReverse.add("YES");
         olAutoReverse.add("NO");
         cbAutoReverse.setItems(olAutoReverse);
-        
+
         olAxis.add("A");
         olAxis.add("B");
         olAxis.add("C");
@@ -69,10 +69,35 @@ public class RotateTransitionTestPresenter {
     void button1Click() {
         String strAngle = tfAngle.getText();
         String strCycleCount = tfCycleCount.getText();
-        String strAutoReverse = cbAutoReverse.getValue().toString();
+        String strAutoReverse = cbAutoReverse.getValue() == null ? "" : cbAutoReverse.getValue().toString();
         String strDuration = tfDuration.getText();
-        String strAxis = cbAxis.getValue().toString();
-        
+        String strAxis = cbAxis.getValue() == null ? "" : cbAxis.getValue().toString();
+
+        if (strAngle == null || strAngle.isEmpty()) {
+            MessageDialog.setContentText("Angle is Empty!");
+            MessageDialog.showAndWait();
+            return;
+        }
+        if (strCycleCount == null || strCycleCount.isEmpty()) {
+            MessageDialog.setContentText("CycleCount is Empty!");
+            MessageDialog.showAndWait();
+            return;
+        }
+        if (strAutoReverse == null || strAutoReverse.isEmpty()) {
+            MessageDialog.setContentText("AutoReverse is Empty!");
+            MessageDialog.showAndWait();
+            return;
+        }
+        if (strDuration == null || strDuration.isEmpty()) {
+            MessageDialog.setContentText("Duration is Empty!");
+            MessageDialog.showAndWait();
+            return;
+        }
+        if (strAxis == null || strAxis.isEmpty()) {
+            MessageDialog.setContentText("Axis is Empty!");
+            MessageDialog.showAndWait();
+            return;
+        }
         
         RotateTransition rt = new RotateTransition(Duration.seconds(3), ImageView1);
         rt.setByAngle(180);
